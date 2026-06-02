@@ -73,16 +73,29 @@ describe("Gilded Rose", function() {
     });
 
     it("backstage pass drops to zero after concert", function() {
-    items = [
-        new Item(
-            "Backstage passes to a TAFKAL80ETC concert",
-            0,
-            20
-        )
-    ];
+        items = [
+            new Item(
+                "Backstage passes to a TAFKAL80ETC concert",
+                0,
+                20
+            )
+        ];
 
-    update_quality();
+        update_quality();
 
-    expect(items[0].quality).toEqual(0);
-});
+        expect(items[0].quality).toEqual(0);
+    });
+
+
+    it("conjured items degrade twice as fast", function() {
+        items = [new Item("Conjured Mana Cake", 3, 6)];
+
+        update_quality();
+
+        expect(items[0].quality).toEqual(4);
+    });
+
+
+
+
 });
