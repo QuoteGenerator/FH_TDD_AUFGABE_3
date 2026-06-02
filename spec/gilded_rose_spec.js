@@ -22,4 +22,12 @@ describe("Gilded Rose", function() {
 
         expect(items[0].quality).toEqual(0);
     });
+    
+    it("quality degrades twice as fast after sell date", function() {
+        items = [new Item("foo", 0, 10)];
+
+        update_quality();
+
+        expect(items[0].quality).toEqual(8);
+    });
 });
