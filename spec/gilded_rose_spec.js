@@ -1,9 +1,9 @@
 describe("Gilded Rose", function() {
+  it("normal item decreases quality by 1", function() {
+      items = [new Item("foo", 10, 20)];
 
-  it("should foo", function() {
-    items = [ new Item("foo", 0, 0) ];
-    update_quality();
-    expect(items[0].name).toEqual("fixme");
+      update_quality();
+
+      expect(items[0].quality).toEqual(19);
   });
-
 });
