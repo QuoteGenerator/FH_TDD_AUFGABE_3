@@ -38,12 +38,21 @@ describe("Gilded Rose", function() {
 
         expect(items[0].quality).toEqual(11);
     });
-    
+
     it("aged brie quality never exceeds 50", function() {
         items = [new Item("Aged Brie", 2, 50)];
 
         update_quality();
 
         expect(items[0].quality).toEqual(50);
+    });
+    
+    it("sulfuras never changes", function() {
+        items = [new Item("Sulfuras, Hand of Ragnaros", 0, 80)];
+
+        update_quality();
+
+        expect(items[0].quality).toEqual(80);
+        expect(items[0].sell_in).toEqual(0);
     });
 });
