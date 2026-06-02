@@ -71,4 +71,18 @@ describe("Gilded Rose", function() {
 
         expect(items[0].quality).toEqual(22);
     });
+
+    it("backstage pass drops to zero after concert", function() {
+    items = [
+        new Item(
+            "Backstage passes to a TAFKAL80ETC concert",
+            0,
+            20
+        )
+    ];
+
+    update_quality();
+
+    expect(items[0].quality).toEqual(0);
+});
 });
